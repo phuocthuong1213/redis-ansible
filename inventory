@@ -1,0 +1,10 @@
+[redis]
+server-01 ansible_host=<SERVER_01_IP> role=master
+server-02 ansible_host=<SERVER_02_IP> role=replica
+server-03 ansible_host=<SERVER_03_IP> role=replica
+
+[redis:vars]
+# User SSH thông thường có quyền chạy sudo trên các server.
+ansible_user=<SSH_USER>
+ansible_become=true
+ansible_become_method=sudo
